@@ -1,0 +1,233 @@
+:root {
+    /* Colors */
+    --brand-color: #278bfd;
+    --black: rgb(24, 24, 24);
+    --white: whitesmoke;
+    /* Fonts */
+    --font-text: "Lato", sans-serif;
+}
+
+/* RESET */
+
+/* Box sizing rules */
+
+.githubButton {
+    display: flex;
+    column-gap: 1em;
+    text-decoration: none;
+}
+
+.githubIcon {
+    width: 1em;
+    height: 1em;
+}
+
+.webIcon {
+    width: 1em;
+    height: 1em;
+}
+
+h2 {
+    font-size: 2.25rem;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: var(--titleMargin);
+}
+
+.pclass {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--white);
+}
+
+.flow>*+* {
+    margin-top: var(--flow-space, 1em);
+}
+
+/* CARD COMPONENT */
+
+.card {
+    display: grid;
+    place-items: center;
+    width: 80vw;
+    max-width: 25.875rem;
+    height: 32.125rem;
+    overflow: hidden;
+    border-radius: 0.625rem;
+    box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
+}
+
+.card>* {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.card__background {
+    object-fit: cover;
+    max-width: 100%;
+    height: 100%;
+    filter: brightness(80%) blur(.1em)
+}
+
+.card__content {
+    --flow-space: 0.9375rem;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    height: 33%;
+    padding: 12% 1.25rem 1.875rem 4em;
+    background: linear-gradient(180deg,
+            hsla(0, 0%, 0%, 0) 0%,
+            hsla(0, 0%, 0%, 0.3) 10%,
+            hsl(0, 0%, 0%) 100%);
+    width: 100%;
+}
+
+
+.card__content--container {
+    --flow-space: 1.25rem;
+}
+
+.card__title {
+    position: relative;
+    width: fit-content;
+    font-size: 2em;
+    width: -moz-fit-content;
+    /* Prefijo necesario para Firefox  */
+}
+
+.card__title::after {
+    content: "";
+    position: absolute;
+    height: 0.3125rem;
+    width: calc(100% + 1.25rem);
+    bottom: calc((1.25rem - 0.5rem) * -1);
+    left: -1.25rem;
+    background-color: var(--brand-color);
+}
+
+.card__button {
+    padding: 0.75em 1.6em;
+    width: fit-content;
+    width: -moz-fit-content;
+    /* Prefijo necesario para Firefox  */
+    font-variant: small-caps;
+    font-weight: bold;
+    border-radius: 0.45em;
+    border: none;
+    background-color: var(--brand-color);
+    font-size: 1.125rem;
+    color: var(--black);
+    transition: background-color .3s !important;
+}
+
+.card__button:hover {
+    background-color: #067aff;
+    cursor: pointer;
+}
+
+.bottomRow {
+    display: flex;
+    width: 85%;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.date {
+    font-size: .85em;
+    color: rgb(194, 194, 194);
+}
+
+@media (any-hover: hover) and (any-pointer: fine) {
+    .card__content {
+        transform: translateY(45%);
+        transition: transform 350ms ease-out;
+    }
+
+    .card__title::after {
+        opacity: 0;
+        transform: scaleX(0);
+        transition: opacity 150ms ease-in, transform 350ms ease-out;
+        transform-origin: right;
+    }
+
+    .card__background {
+        transition: transform 350ms ease-in;
+    }
+
+    .card__content--container> :not(.card__title),
+    .card__button {
+        opacity: 0;
+        transition: transform 350ms ease-out, opacity 350ms ease-out;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+        transition: transform 350ms ease-in;
+    }
+
+    .card:hover .card__content {
+        transform: translateY(0);
+        transition: transform 350ms ease-in;
+    }
+
+    .card:hover .card__background {
+        transform: scale(1.3);
+    }
+
+    .card:hover .card__content--container> :not(.card__title),
+    .card:hover .card__button {
+        opacity: 1;
+        transition: opacity 350ms ease-in;
+        transition-delay: 150ms;
+    }
+
+    .card:hover .card__title::after {
+        opacity: 1;
+        transform: scaleX(1);
+        transform-origin: left;
+        transition: opacity 350ms ease-in, transform 350ms ease-in;
+        transition-delay: 350ms;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .card {
+        max-width: 16.875rem;
+        height: 23.125rem;
+    }
+
+    .card__title {
+        font-size: 1.5em;
+    }
+
+    .githubButton {
+        font-size: .8em;
+    }
+
+    .tags {
+        font-size: .8em;
+    }
+
+    .card__content {
+        padding: 16% 2.25rem 1.875rem 4em;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .card__title {
+        font-size: 1.4em;
+    }
+
+    .githubButton {
+        font-size: .8em;
+    }
+
+    .tags {
+        font-size: .7em;
+    }
+
+    .card__content {
+        padding: 16% 1.25rem 1.875rem 4em;
+    }
+}

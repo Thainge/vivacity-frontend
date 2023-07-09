@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  font-family: "Helvetica Now Display DW", sans-serif;
+  overflow-x: hidden;
+}
+
+:root {
+  --email-display: none;
+  --animated-scroll: black;
+  --menu-bar-width: 0em;
+
+  /* Blue Theme */
+  --primary: #0053be;
+  --primaryOpacity1: #6600ccb4;
+  --primaryOpacity2: #6600cc91;
+  --primaryOpacity3: #6600cca8;
+  --secondary: #00a7f5;
+  --secondaryOpacity1: #ff7ff6;
+  --secondaryOpacity2: #ff4ff388;
+  --text: #0077ff;
+  --text2: #0077ff7c;
+
+  --darkSwatch1: #002f7a;
+  --darkSwatch2: #116488;
+  --swatch1: #2c8fff;
+
+  /* Button */
+  --swatch2: #1f70da;
+  --swatch3: #1aa7df;
+
+  --text3: #981aec;
+  --swatch4: #6600cc;
+  --swatch5: #ff4ff3;
+
+  /* Button 2 */
+  --swatch6: #007ab3;
+  --swatch7: #003d8d;
+
+  --lightSwatch: rgb(0, 238, 255);
+  --textSecondary: rgb(0, 238, 255);
+}
+
+@media screen and (max-width: 648px) {
+  body {
+    font-size: .7em;
+  }
+}
+
+.react-rotating-text-cursor {
+  animation: blinking-cursor 0.8s cubic-bezier(0.68, 0.01, 0.01, 0.99) 0s infinite;
+}
+
+@keyframes blinking-cursor {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

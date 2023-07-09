@@ -1,0 +1,340 @@
+.header {
+    position: relative;
+    padding-top: 6em;
+    padding-bottom: 10em;
+    height: 35em;
+    background: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
+    background: url(../assets/home.png);
+    background-size: cover;
+    overflow: hidden;
+}
+
+.floatingContainer {
+    background-color: rgb(245, 245, 245);
+}
+
+/* Form */
+.formHeader {
+    color: white;
+    margin-bottom: 0em;
+}
+
+.textDates {
+    display: flex;
+    flex-direction: column;
+    row-gap: .5em;
+}
+
+.textLabel {
+    display: flex;
+    flex-direction: column;
+    font-size: .75em;
+}
+
+.textLabelNames {
+    display: flex;
+    flex-direction: column;
+    font-size: .3em;
+}
+
+.editNames {
+    row-gap: .25em;
+}
+
+.textLabelP {
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    margin-top: .5em;
+}
+
+.textInput {
+    border-radius: .5em;
+    padding: .5em;
+    color: #f5f5f5;
+    color: #adadad;
+}
+
+.textInputArea {
+    padding: .5em;
+    border-radius: .5em;
+    min-width: 99%;
+    max-width: 99%;
+    width: 99%;
+    max-height: 8em;
+    min-height: 4em;
+    height: 4em;
+    font-family: "Helvetica Now Display DW", sans-serif;
+}
+
+/* Picture */
+
+.floatingImageBox {
+    color: whitesmoke;
+}
+
+.profilePicture {
+    animation: mover 3s infinite ease-in-out alternate;
+    width: 10em;
+    cursor: pointer;
+    border-radius: 50em;
+    transition: all .3s;
+}
+
+.profilePicture:hover {
+    scale: 1.2;
+}
+
+.profilePicture:active {
+    scale: 1.1;
+}
+
+@keyframes mover {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-3em);
+    }
+}
+
+/* Header */
+.headerFlex {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+/* Header text */
+
+.headerForm {
+    display: flex;
+    flex-direction: column;
+    width: 25em;
+}
+
+.headerH1 {
+    font-size: 3.5em;
+    margin-top: 0;
+    margin-bottom: .5em;
+    color: rgba(245, 245, 245, 0.993);
+    max-width: 35em;
+}
+
+.editMargin {
+    margin: 0;
+    padding: 0;
+}
+
+.headerH2 {
+    color: rgba(245, 245, 245, 0.993);
+    margin-bottom: .5em;
+    max-width: 35em;
+}
+
+.headerPara {
+    margin-bottom: 2.5em;
+    color: rgba(245, 245, 245, 0.993);
+    line-height: 1.7em;
+    max-width: 35em;
+}
+
+.extraPara {
+    min-height: 14em;
+}
+
+.headerButtons {
+    display: flex;
+    column-gap: 1em;
+    align-items: center;
+}
+
+.headerSplitter {
+    color: rgba(245, 245, 245, 0.993);
+}
+
+.linkBox {
+    display: flex;
+}
+
+.button2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Franklin Gothic Medium';
+    color: rgba(245, 245, 245, 0.993);
+    background: linear-gradient(90deg, var(--swatch6) 0%, var(--swatch7) 100%);
+    letter-spacing: .1em;
+    font-size: .9em;
+    text-transform: uppercase;
+    border-radius: 5em;
+    padding: 2em;
+    padding-top: .8em;
+    padding-bottom: .8em;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: all .2s;
+    user-select: none;
+    text-decoration: none;
+}
+
+.buttonText {
+    color: rgba(245, 245, 245, 0.993);
+    letter-spacing: .1em;
+    font-size: .9em;
+    font-family: 'Franklin Gothic Medium';
+    user-select: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all .3s;
+    border-bottom: 1px solid rgba(245, 245, 245, 0);
+    cursor: pointer;
+}
+
+.buttonText:hover {
+    border-bottom: 1px solid rgba(245, 245, 245, 0.993);
+}
+
+.button1:hover,
+.button2:hover,
+.linkButton:hover {
+    box-shadow: rgba(0, 0, 0, 0.29) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    cursor: pointer;
+}
+
+/* Animated Waves */
+
+.waveBox {
+    position: absolute;
+    bottom: 0em;
+    left: 0;
+    width: 100%;
+}
+
+.waveStatic {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    bottom: 0;
+    left: 0;
+    background-size: contain;
+    background-image: url(../assets/wave.png);
+}
+
+.waveAnimation {
+    height: 143px;
+    position: relative;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.waveAnimation .wave {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /*PNG*/
+    bottom: 0;
+    left: 0;
+    background-image: url(../assets/wave.png);
+    opacity: .7;
+    animation: anim 10s linear infinite;
+}
+
+.waveAnimation .wave:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url(../assets/wave.png);
+    opacity: 0.4;
+    animation: anim-rev 10s linear infinite;
+}
+
+.waveAnimation .wave:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url(../assets/wave.png);
+    opacity: 0.6;
+    animation-delay: -5s;
+    animation: anim 20s linear infinite;
+}
+
+@keyframes anim {
+    0% {
+        background-position: 0;
+    }
+
+    100% {
+        background-position: 1360px;
+    }
+}
+
+@keyframes anim-rev {
+    0% {
+        background-position: 1360px;
+    }
+
+    100% {
+        background-position: 0px;
+    }
+}
+
+@media screen and (max-width: 978px) {
+    .headerForm {
+        padding-right: 2em;
+        padding-left: 1em;
+    }
+}
+
+@media screen and (max-width: 860px) {
+    .headerH1 {
+        font-size: 5vw;
+    }
+
+    .editMargin {
+        font-size: 3.5em;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .header {
+        padding-top: 7em;
+        padding-bottom: 20em;
+    }
+
+    .textInputArea {
+        min-width: 95%;
+        max-width: 95%;
+        width: 95%;
+    }
+
+    .headerH1 {
+        font-size: 2em;
+    }
+
+    .editMargin {
+        font-size: 3.5em;
+    }
+
+    .headerForm {
+        display: flex;
+        flex-direction: column;
+        max-width: 80vw;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .waveStatic {
+        background-size: cover;
+    }
+}

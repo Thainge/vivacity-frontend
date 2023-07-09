@@ -1,0 +1,148 @@
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    background: rgb(255, 0, 240);
+    background: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
+    overflow: hidden;
+}
+
+.wave {
+    position: absolute;
+    min-width: 100em;
+    width: 100%;
+    height: 50px;
+    top: 0;
+    left: 0;
+    background-size: contain;
+    background-image: url(../../assets/wave2.png);
+    filter: drop-shadow(0 -.5em .3em #00000062);
+    transform: rotate(180deg);
+}
+
+.footer {
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 80em;
+    width: 100%;
+    min-height: 18em;
+    padding-top: 6em;
+    padding-bottom: 2em;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 1em;
+    row-gap: .5em;
+}
+
+.miniColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    row-gap: 1em;
+}
+
+.twoColumns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.col1 {
+    justify-content: space-between;
+    width: 45%;
+}
+
+.col2 {
+    width: 25%;
+}
+
+.col3 {
+    width: 25%;
+}
+
+.col4 {
+    width: 25%;
+}
+
+.h1 {
+    margin-top: 0;
+    font-size: 1.4em;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+.h1:hover {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.h2 {
+    color: white;
+    margin-top: 0;
+    font-size: 1.1em;
+    margin-bottom: .3em;
+    font-weight: bold;
+}
+
+.link {
+    color: rgba(245, 245, 245, 0.97);
+    text-decoration: none;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+.link:hover {
+    color: rgba(245, 245, 245, 0.7);
+}
+
+.text {
+    color: rgba(245, 245, 245, 0.97);
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    width: 1em;
+    margin-right: .5em;
+}
+
+.copyright {
+    color: white;
+}
+
+@media screen and (max-width: 648px) {
+    .container {
+        font-size: .9em;
+    }
+
+    .twoColumns {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1em;
+    }
+
+    .footer {
+        row-gap: 1em;
+        column-gap: 15vw;
+    }
+
+    .col1 {
+        height: 15.5em;
+    }
+
+    .column {
+        width: 80%;
+    }
+}

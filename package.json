@@ -1,0 +1,67 @@
+{
+  "name": "vivacity-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.38",
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "axios": "^1.4.0",
+    "expect": "^29.6.1",
+    "jest": "^29.6.1",
+    "nock": "^13.3.1",
+    "react": "^18.2.0",
+    "react-content-loader": "^6.2.1",
+    "react-dom": "^18.2.0",
+    "react-loading": "^2.0.3",
+    "react-redux": "^8.1.1",
+    "react-reveal": "^1.2.2",
+    "react-rotating-text": "^1.4.1",
+    "react-scripts": "5.0.1",
+    "redux": "^4.2.1",
+    "redux-thunk": "^2.4.2",
+    "ts-jest": "^29.1.1",
+    "typescript": "^4.9.5",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/enzyme": "^3.10.13",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.8.0",
+    "enzyme": "^3.11.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jsdom": "22.1.0",
+    "jsdom-global": "3.0.2",
+    "redux-mock-store": "^1.5.4",
+    "typescript-plugin-css-modules": "^5.0.1"
+  }
+}

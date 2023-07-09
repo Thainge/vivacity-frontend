@@ -1,0 +1,189 @@
+.navContainer {
+    display: flex;
+    justify-content: center;
+    margin-left: 10em;
+}
+
+.bodyContainer {
+    position: relative;
+    overflow: hidden;
+}
+
+.fixedBody {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.navBar {
+    position: absolute;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-top: .8em;
+    height: 3.5em;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    z-index: 1;
+    max-width: 50em;
+    width: 100%;
+}
+
+.specialNav {
+    user-select: none;
+    position: absolute;
+    top: 1em;
+    left: 0;
+    z-index: 2;
+    color: whitesmoke;
+}
+
+.specialLink {
+    display: flex;
+    column-gap: .5em;
+    text-decoration: none;
+    transition: all .3s;
+    margin-left: 1em;
+    cursor: pointer;
+}
+
+.navItem {
+    color: whitesmoke;
+    transition: all .3s;
+}
+
+.navItem {
+    font-size: 1.1em;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.navItem:hover,
+.specialLink:hover {
+    color: rgba(245, 245, 245, 0.7);
+}
+
+.navMenu {
+    display: none;
+    position: absolute;
+    top: 1.5em;
+    right: 1.5em;
+}
+
+.imgBox {
+    cursor: pointer;
+    background-color: rgba(245, 245, 245, 0.3);
+    padding: .5em;
+    padding-right: 1em;
+    padding-left: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1em;
+    border-radius: 10em;
+    transition: all .2s;
+    user-select: none;
+    -webkit-user-drag: none;
+    position: relative;
+    z-index: 1;
+}
+
+.imgBox:hover {
+    background-color: rgba(245, 245, 245, 0.4);
+}
+
+.imgBox:active {
+    background-color: rgba(245, 245, 245, 0.6);
+}
+
+.menuIcon {
+    width: 100%;
+}
+
+.menuList {
+    position: absolute;
+    top: 2em;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: white;
+    border-radius: .5em;
+    z-index: 5;
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+    padding: .5em;
+    width: 10em;
+}
+
+.menuItem {
+    border-radius: .5em;
+    width: 80%;
+    color: black;
+    padding: 1em;
+    transition: all 0s;
+    -webkit-user-drag: none;
+}
+
+.menuItem:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+/* -----------------------Left Header----------------------- */
+
+.menuHeaderDiv {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: .5em;
+    padding-left: 1.5em;
+    cursor: pointer;
+    font-size: .9em;
+    color: whitesmoke;
+    transition: all .3s;
+}
+
+.menuHeaderDiv:hover {
+    color: rgba(245, 245, 245, 0.7);
+}
+
+.hiddenLink {
+    list-style: none;
+    text-decoration: none;
+}
+
+.HeaderText {
+    padding: 1em;
+}
+
+.circleImage {
+    width: 2.5em;
+    margin-right: .5em;
+    margin-top: .3em;
+}
+
+.h2 {
+    font-size: 1.6em;
+    font-weight: 900;
+}
+
+.h4 {
+    font-size: .7em;
+    letter-spacing: .3em;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 978px) {
+    .navBar {
+        display: none;
+    }
+
+    .navMenu {
+        display: block;
+    }
+}
