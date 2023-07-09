@@ -4,6 +4,7 @@ import { configureStore } from '@reduxjs/toolkit';
 
 const baseUrl = 'http://localhost:6060/awesome/applicant';
 
+// Create redux toolkit API manager
 export const applicantApi = createApi({
     reducerPath: 'applicantApi',
     baseQuery: fetchBaseQuery({
@@ -38,6 +39,7 @@ export const applicantApi = createApi({
     })
 });
 
+// Create redux toolkit store
 export const store = configureStore({
     reducer: {
         [applicantApi.reducerPath]: applicantApi.reducer,
