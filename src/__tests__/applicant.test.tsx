@@ -79,14 +79,14 @@ describe('Applicant API Tests', () => {
   describe('GET applicant', () => {
     beforeAll(async () => {
       // Create the test object
-      return await store.dispatch(
+      await store.dispatch(
         applicantApi.endpoints.postApplicant.initiate(applicant)
       );
     });
 
     afterAll(async () => {
       // Delete the test object
-      return await store.dispatch(
+      await store.dispatch(
         applicantApi.endpoints.deleteApplicant.initiate(applicant.id)
       );
     });
@@ -113,7 +113,7 @@ describe('Applicant API Tests', () => {
   describe('POST applicant', () => {
     beforeEach(async () => {
       // Delete the test object before each test
-      return await store.dispatch(
+      await store.dispatch(
         applicantApi.endpoints.deleteApplicant.initiate(applicant.id)
       );
     });
@@ -152,14 +152,14 @@ describe('Applicant API Tests', () => {
   describe('PUT applicant', () => {
     beforeAll(async () => {
       // Create the test object
-      return await store.dispatch(
+      await store.dispatch(
         applicantApi.endpoints.postApplicant.initiate(applicant)
       );
     });
 
     afterAll(async () => {
       // Delete the test object
-      return await store.dispatch(
+      await store.dispatch(
         applicantApi.endpoints.deleteApplicant.initiate(applicant.id)
       );
     });
@@ -198,21 +198,21 @@ describe('Applicant API Tests', () => {
   describe('DELETE applicant', () => {
     beforeAll(async () => {
       // Create the test object
-      return await store.dispatch(
+      await store.dispatch(
         applicantApi.endpoints.postApplicant.initiate(applicant)
       );
     });
 
     afterAll(async () => {
       // Delete the test object
-      return await store.dispatch(
+      await store.dispatch(
         applicantApi.endpoints.deleteApplicant.initiate(applicant.id)
       );
     });
 
     test('DELETE status success & returns id', async () => {
       const result = await store.dispatch(
-        applicantApi.endpoints.getApplicant.initiate(applicant.id)
+        applicantApi.endpoints.deleteApplicant.initiate(applicant.id)
       );
       const data = result.data;
 
@@ -222,7 +222,7 @@ describe('Applicant API Tests', () => {
 
     test('DELETE invalid input returns success false', async () => {
       const result = await store.dispatch(
-        applicantApi.endpoints.getApplicant.initiate(null)
+        applicantApi.endpoints.deleteApplicant.initiate(null)
       );
 
       expect(result.isSuccess).toEqual(false);
