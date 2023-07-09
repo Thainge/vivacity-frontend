@@ -8,7 +8,7 @@ Frontend for the Vivacity Full Stack Developer Application Exercise.
 - Perform CRUD operations on the applicant
 - Styled with professional animations
 - Redux Toolkit to store API data
-- Jest unit tests for code
+- Jest unit tests
 
 ##
 © 2023 Tobey Hainge All rights reserved.
