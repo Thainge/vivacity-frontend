@@ -10,8 +10,7 @@ module.exports = {
     // Runs special logic, adding special
     // extended assertions to Jest
     setupFilesAfterEnv: [
-        '@testing-library/jest-dom/extend-expect',
-        './setup-tests.js'
+        '@testing-library/jest-dom/extend-expect'
     ],
     // Test spec file resolution pattern
     // Matches parent folder `__tests__` and filename
