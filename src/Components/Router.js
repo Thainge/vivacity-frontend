@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Home from '../Pages/Home';
-import Footer from './Other/footer';
 import styles from './Router.module.css';
 import Loader from './Other/Loader';
 

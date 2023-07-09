@@ -20,29 +20,33 @@ export interface Applicant {
     zip: String;
 }
 
+const defaultApplicant: Applicant = {
+    id: 1,
+    firstname: "",
+    lastname: "",
+    about: "",
+    address: "",
+    state: "",
+    city: "",
+    zip: "",
+}
+
 function Home() {
+    // Redux API calls
     const [GETApplicantAPI, { isFetching }] = useLazyGetApplicantQuery();
     const [POSTApplicantAPI] = useLazyPostApplicantQuery();
     const [PUTApplicantAPI] = useLazyPutApplicantQuery();
     const [DELETEApplicantAPI] = useLazyDeleteApplicantQuery();
 
-    const defaultApplicant: Applicant = {
-        id: 1,
-        firstname: "",
-        lastname: "",
-        about: "",
-        address: "",
-        state: "",
-        city: "",
-        zip: "",
-    }
     const [userData, setUserData] = useState<Applicant>(defaultApplicant);
     const [creating, setCreating] = useState<boolean>(false);
     const [editing, setEditing] = useState<boolean>(false);
 
     const GetApplicant = async () => {
+        // GET applicant data from API
         let response = await GETApplicantAPI(1);
         if (response.data != null) {
+            // setstate with data
             setUserData(() => response.data);
             setEditing(() => false);
             setCreating(() => false);
@@ -76,15 +80,18 @@ function Home() {
     }
 
     const DeleteApplicant = async () => {
+        // delete id 1 since only 1 applicant for this project
         await DELETEApplicantAPI(1);
         setUserData(() => defaultApplicant);
     }
 
     const UpdateField = (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
+        // dynamically pull name and value from inputs
         let value = e.target.value;
         let name = e.target.name;
 
         try {
+            // update form data
             setUserData((prevData) => {
                 let newData = { ...prevData };
                 newData[name] = value;
