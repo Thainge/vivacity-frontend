@@ -17,7 +17,10 @@ export const applicantApi = createApi({
     }),
     endpoints: (builder) => ({
         getApplicant: builder.query({
-            query: (id) => `${baseUrl}/${id}`
+            query: (id) => ({
+                url: `${baseUrl}/${id}`,
+                method: 'GET',
+            }),
         }),
         postApplicant: builder.query<Applicant, Partial<Applicant>>({
             query: (body) => ({
@@ -34,7 +37,10 @@ export const applicantApi = createApi({
             }),
         }),
         deleteApplicant: builder.query({
-            query: (id) => `${baseUrl}/${id}`
+            query: (id) => ({
+                url: `${baseUrl}/${id}`,
+                method: 'DELETE',
+            }),
         }),
     })
 });
