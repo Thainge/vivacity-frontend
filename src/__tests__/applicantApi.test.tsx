@@ -156,7 +156,7 @@ describe('Applicant API Tests', () => {
             const data = result.data;
 
             expect(result.isSuccess).toEqual(true);
-            expect(data.id).toEqual(applicant.id);
+            expect(data).toEqual(applicant.id);
         });
 
         test('DELETE invalid input returns success false', async () => {

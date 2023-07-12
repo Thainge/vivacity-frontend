@@ -23,6 +23,7 @@
   },
   "include": [
     "src/**/*",
-    "typings/*"
+    "typings/*",
+    "fileTransformer.js"
   ],
 }

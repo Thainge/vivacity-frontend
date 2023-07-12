@@ -113,52 +113,52 @@ function Home() {
                             {
                                 creating || editing
                                     ? <div className={styles.textDates}>
-                                        <label id="address" className={styles.textLabel}>
+                                        <label id="address" className={styles.textLabel} data-testid="addressLabel">
                                             Address
                                             <input className={styles.textInput} name='address' value={userData.address as string} onChange={(e) => UpdateField(e)}></input>
                                         </label>
-                                        <label className={styles.textLabel}>
+                                        <label className={styles.textLabel} data-testid="cityLabel">
                                             City
                                             <input className={styles.textInput} name='city' value={userData.city as string} onChange={(e) => UpdateField(e)}></input>
                                         </label>
-                                        <label className={styles.textLabel}>
+                                        <label className={styles.textLabel} data-testid="stateLabel">
                                             State
                                             <input className={styles.textInput} name='state' value={userData.state as string} onChange={(e) => UpdateField(e)}></input>
                                         </label>
-                                        <label className={styles.textLabel}>
+                                        <label className={styles.textLabel} data-testid="zipLabel">
                                             Zip
                                             <input className={styles.textInput} name='zip' value={userData.zip as string} onChange={(e) => UpdateField(e)}></input>
                                         </label>
                                     </div>
-                                    : isFetching ? <ReactLoading type={"bubbles"} color={"#fff"} height={667} width={375} /> : <>{userData.address}{userData.address.length > 0 ? ',' : ''} {userData.city}{userData.address.length > 0 ? ',' : ''} {userData.state} {userData.zip}</>
+                                    : isFetching ? <ReactLoading type={"bubbles"} color={"#fff"} height={667} width={375} /> : <div data-testid="addressData">{userData.address}{userData.address.length > 0 ? ',' : ''} {userData.city}{userData.address.length > 0 ? ',' : ''} {userData.state} {userData.zip}</div>
                             }
                         </h2>
                         <h1 className={`${styles.headerH1} ${creating || editing ? styles.editMargin : styles.nothing}`}>
                             {
                                 creating || editing ? <div className={`${styles.textDates} ${creating || editing ? styles.editNames : styles.nothing}`}>
-                                    <label className={styles.textLabelNames}>
+                                    <label className={styles.textLabelNames} data-testid="firstNameLabel">
                                         First Name
                                         <input className={styles.textInput} name='firstname' value={userData.firstname as string} onChange={(e) => UpdateField(e)}></input>
                                     </label>
-                                    <label className={styles.textLabelNames}>
+                                    <label className={styles.textLabelNames} data-testid="lastNameLabel">
                                         Last Name
                                         <input className={styles.textInput} name='lastname' value={userData.lastname as string} onChange={(e) => UpdateField(e)}></input>
                                     </label>
                                 </div>
-                                    : isFetching ? <ReactLoading type={"bubbles"} color={"#fff"} height={667} width={375} /> : <>{userData.firstname} {userData.lastname}</>
+                                    : isFetching ? <ReactLoading type={"bubbles"} color={"#fff"} height={667} width={375} /> : <div data-testid="nameData">{userData.firstname} {userData.lastname}</div>
                             }
                         </h1>
                         <div className={`${styles.headerPara} ${creating || editing ? styles.nothing : styles.extraPara}`}>
                             {
-                                creating || editing ? <label className={styles.textLabelP}>
+                                creating || editing ? <label className={styles.textLabelP} data-testid="aboutLabel">
                                     Description
                                     <textarea autoComplete="nope" className={styles.textInputArea} name='about' value={userData.about as string} onChange={(e) => UpdateField(e)}></textarea>
-                                </label> : isFetching ? <ReactLoading type={"bubbles"} color={"#fff"} height={667} width={375} /> : <>{userData.about}</>
+                                </label> : isFetching ? <ReactLoading type={"bubbles"} color={"#fff"} height={667} width={375} /> : <div data-testid="aboutData">{userData.about}</div>
                             }
                         </div>
                         <div className={styles.headerButtons}>
-                            <div className={styles.button2} onClick={CreateApplicant}>{creating ? "Submit" : "Create"}</div>
-                            <div className={styles.button2} onClick={UpdateApplicant}>{editing ? "Submit" : "Edit"}</div>
+                            <div className={styles.button2} onClick={CreateApplicant} data-testid="createBtn">{creating ? "Submit" : "Create"}</div>
+                            <div className={styles.button2} onClick={UpdateApplicant} data-testid="editBtn">{editing ? "Submit" : "Edit"}</div>
                             <div className={styles.headerSplitter}>or</div>
                             <div className={styles.button2} onClick={DeleteApplicant}>Delete</div>
                         </div>
@@ -166,7 +166,7 @@ function Home() {
                 </Fade>
                 <Fade up delay={400} distance={'5em'}>
                     <div className={styles.floatingImageBox}>
-                        <img onClick={GetApplicant} src={require('../assets/tobey.png')} className={styles.profilePicture} />
+                        <img onClick={GetApplicant} alt="Tobey picture" data-testid="applicantImage" src={require('../assets/tobey.png')} className={styles.profilePicture} />
                     </div>
                 </Fade>
             </div>
